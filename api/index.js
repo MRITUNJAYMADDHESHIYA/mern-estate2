@@ -1,4 +1,14 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';  //this packege use for hide the database link in env
+dotenv.config();
+
+mongoose.connect(process.env.MONGO).then( ()=>{
+    console.log('connected to MongoDB!');
+}).catch((err) =>{
+    console.log('error');
+})
+
 
 const app = express();
 
